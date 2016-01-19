@@ -80,7 +80,7 @@ class notification_management extends MY_Controller {
 	}
 
 	public function update_notification() {
-		ini_set("max_execution_time", "1000000");
+		ini_set("max_execution_time", "1200000");
 		$this -> load -> library('Curl');
 
 		$main_link=base_url()."github/";
