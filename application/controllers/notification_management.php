@@ -455,7 +455,7 @@ class notification_management extends MY_Controller {
 				
 
 				$sql = "UPDATE patient p " . "SET p.start_regimen_date='$first_regimen_date'" . " WHERE p.patient_number_ccc='" . $patient_ccc . "'";
-				$result = $this->db->query($sql);
+				$result = $this ->db->query($sql);
 				//$res = $result->result_array();
 				$this -> session -> set_userdata('msg_save_transaction', 'success');
 
