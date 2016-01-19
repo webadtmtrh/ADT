@@ -84,7 +84,7 @@ class notification_management extends MY_Controller {
 		$this -> load -> library('Curl');
 
 		$main_link=base_url()."github/";
-		$main_link=str_replace("ADT_MTRH", "UPDATE", $main_link);
+		$main_link=str_replace("ADT", "UPDATE", $main_link);
 
 		$url = $main_link . "checkJsonUpdate";
 		$curl = new Curl();
@@ -106,7 +106,7 @@ class notification_management extends MY_Controller {
 				if($this->session->userdata("update_session") ==""){
 	                //update needed
 	                $main_link=base_url()."github/";
-			        $main_link=str_replace("ADT_MTRH", "UPDATE", $main_link);
+			        $main_link=str_replace("ADT", "UPDATE", $main_link);
 			        $url = $main_link . "runGithubUpdater";
 			        //create update session
 			        $this->session->set_userdata("update_session",true);
@@ -455,7 +455,7 @@ class notification_management extends MY_Controller {
 				
 
 				$sql = "UPDATE patient p " . "SET p.start_regimen_date='$first_regimen_date'" . " WHERE p.patient_number_ccc='" . $patient_ccc . "'";
-				$result = $this >db->query($sql);
+				$result = $this->db->query($sql);
 				//$res = $result->result_array();
 				$this -> session -> set_userdata('msg_save_transaction', 'success');
 
