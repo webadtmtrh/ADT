@@ -76,7 +76,6 @@ class notification_management extends MY_Controller {
 		}
 
 		echo $notification;
-
 	}
 
 	public function update_notification() {
