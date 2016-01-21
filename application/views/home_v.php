@@ -1,4 +1,7 @@
 <?php
+
+ob_start();
+
 $access_level = $this -> session -> userdata('user_indicator');
 $user_is_administrator = false;
 $user_is_nascop = false;
@@ -26,6 +29,8 @@ if($this->session->userdata("changed_password")){
 	echo "<p class='error'>".$message."</p>";
 	$this->session->set_userdata("changed_password","");
 }
+
+ob_get_clean();
 ?>
 
 <script type="text/javascript">
@@ -264,6 +269,7 @@ $(document).ready(function() {
 </div>
 	<?php }if($user_is_administrator){ $this->load->view("sysadmin_home_v");}?>
 </div>
+
 
 <script type="text/javascript">
 $(document).ready(function(){
