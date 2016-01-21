@@ -1,4 +1,8 @@
 <?php
+
+
+ob_start();
+
 error_reporting(0);
 class notification_management extends MY_Controller {
 	var $nascop_url = "";
@@ -162,17 +166,17 @@ class notification_management extends MY_Controller {
 										   AND p.active='1'
 										   GROUP BY p.patient_number_ccc;";
 
-		/*Patients without DOB*/
-		$sql['Patients without DOB'] = "SELECT p.patient_number_ccc,
-											   p.dob,
-		                                       p.id
-										FROM patient p 
-										WHERE (p.dob=' ' 
-										OR p.dob='' 
-										OR p.dob='null' 
-										OR p.dob is null)
-										AND p.active='1'
-										GROUP BY p.patient_number_ccc;";
+		// /*Patients without DOB*/
+		// $sql['Patients without DOB'] = "SELECT p.patient_number_ccc,
+		// 									   p.dob,
+		//                                        p.id
+		// 								FROM patient p 
+		// 								WHERE (p.dob=' ' 
+		// 								OR p.dob='' 
+		// 								OR p.dob='null' 
+		// 								OR p.dob is null)
+		// 								AND p.active='1'
+		// 								GROUP BY p.patient_number_ccc;";
 
 		/*Patients without Appointment*/
 		$sql['Patients without Appointment'] = "SELECT  p.patient_number_ccc, 
@@ -572,3 +576,7 @@ class notification_management extends MY_Controller {
 	}
 
 }
+
+// Clossing the buffer
+ob_get_clean();
+?>

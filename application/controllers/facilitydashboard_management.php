@@ -1,4 +1,7 @@
 <?php
+
+ob_start();
+
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
@@ -462,7 +465,12 @@ class Facilitydashboard_Management extends MY_Controller {
 		if (file_exists($filename)) {
 			$filename = str_replace("#", "%23", $filename);
 			redirect($filename);
-		}      
+		}
+
     }
 
 }
+
+ob_get_clean();
+
+?>

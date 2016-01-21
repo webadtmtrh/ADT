@@ -1,4 +1,7 @@
 <?php
+
+ob_start(); 
+
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 class User_Management extends MY_Controller {
@@ -780,3 +783,7 @@ class User_Management extends MY_Controller {
 	}
 
 }
+
+ob_get_clean();
+
+?>

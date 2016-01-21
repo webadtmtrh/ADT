@@ -1,4 +1,8 @@
 <?php
+
+// Send the files to the buffer.
+ob_start();
+
 class Patient_Management extends MY_Controller {
 	function __construct() {
 		parent::__construct();
@@ -1949,4 +1953,8 @@ public function get_patient_details(){
 }
 
 }
+
+// clossing the buffer
+
+ob_get_clean();
 ?>

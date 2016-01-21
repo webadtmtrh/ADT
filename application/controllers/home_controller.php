@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
@@ -127,5 +129,8 @@ public function get_faq(){
         $this -> load -> view("template", $data);
 }
         
-
 }
+
+ob_get_clean();
+
+?>

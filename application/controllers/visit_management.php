@@ -1,4 +1,7 @@
 <?php
+
+ob_start();
+
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
@@ -113,6 +116,9 @@ class Visit_Management extends MY_Controller {
 		$this -> load -> view("visit_v", $data);
 	}
 
-	
 
 }
+
+ob_get_clean();
+
+?>

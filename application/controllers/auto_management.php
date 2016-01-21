@@ -1,5 +1,8 @@
 <?php
 //error_reporting(0);
+
+ob_start();
+
 class auto_management extends MY_Controller {
 	var $nascop_url = "";
 	var $viral_load_url="";
@@ -1086,4 +1089,6 @@ class auto_management extends MY_Controller {
 		return $message;
 	}
 }
+
+ob_get_clean();
 ?>
